@@ -9,6 +9,20 @@
   <strong>User:</strong>
   <%= @playlist.user.name %>
 </p>
+<hr>
+<%# if @songs.present? %>
+  <table>
+    <% @songs.each do |s| %>
+      <tr>
+        <td><%= s.id %></td>
+        <td><%= s.name %></td>
+        <td><%= s.artist %></td>
+        <td><%= link_to 'X', playlist_song_path(@playlist.id, s ), method: :delete, data: 'Are you sure?' %></td>
+      </tr>
+    <% end %>
+  </table>
+
+<%# end %>
 
 <%= render 'form_song' %>
 

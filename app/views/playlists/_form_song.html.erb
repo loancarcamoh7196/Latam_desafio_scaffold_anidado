@@ -1,0 +1,15 @@
+<hr>
+<h3>Add Song to Playlist</h3>
+<%= form_with model:[@playlist, @song], local: true do |f|%>
+    <div class="field">
+        <%= f.label :artist %>
+        <%= f.text_field :artist %>
+    </div>
+
+    <div class="field">
+        <%= f.label :name %>
+        <%= f.text_field :name %>
+    </div>
+    <%# f.hidden_field :playlist_id %>
+    <%= f.submit "Submit", disable_with: 'Submiting...' %>
+<% end %>
