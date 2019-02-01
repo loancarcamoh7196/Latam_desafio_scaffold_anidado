@@ -10,7 +10,7 @@ class PlaylistsController < ApplicationController
   # GET /playlists/1
   # GET /playlists/1.json
   def show
-    @songs = Song.all
+    @songs = Song.where(playlist_id: params[:id])
     @song = Song.new
     @playlist = Playlist.find(params[:id])
   end
