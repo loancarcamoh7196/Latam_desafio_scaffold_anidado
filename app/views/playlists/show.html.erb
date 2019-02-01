@@ -7,8 +7,10 @@
 
 <p>
   <strong>User:</strong>
-  <%= @playlist.user %>
+  <%= @playlist.user.name %>
 </p>
+
+<%= render 'form_song' %>
 
 <%= link_to 'Edit', edit_playlist_path(@playlist) %> |
 <%= link_to 'Back', playlists_path %>

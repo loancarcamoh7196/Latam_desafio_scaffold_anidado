@@ -10,12 +10,15 @@ class PlaylistsController < ApplicationController
   # GET /playlists/1
   # GET /playlists/1.json
   def show
+    @song = Song.new
+    @playlist = Playlist.find(params[:id])
   end
 
   # GET /playlists/new
   def new
+    @users = User.all.pluck( :name, :id,)
     @playlist = Playlist.new
-  end
+  end 
 
   # GET /playlists/1/edit
   def edit
